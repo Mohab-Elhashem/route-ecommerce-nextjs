@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Route E-Commerce Storefront
+
+A full-featured e-commerce web application built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS v4**, integrated with the Route E-Commerce REST API (`https://ecommerce.routemisr.com`) and deployed on **Vercel**.
+
+## Live Demo & Repository
+
+- **Live Demo:** `https://route-ecommerce-nextjs.vercel.app/`
+- **GitHub Repository:** `https://github.com/Mohab-Elhashem/route-ecommerce-nextjs`
+
+## Features
+
+- **Storefront & Catalog:** Home page with hero banners, featured categories, popular brands, product listings with search, filtering (category, subcategory, brand, price), pagination, and detailed product pages with interactive image gallery and customer reviews.
+- **Categories & Brands:** Dedicated listing and detail views for categories (including subcategories) and brands with associated products.
+- **Shopping Cart & Wishlist:** Full cart management (display, add, update quantity, remove item, clear cart, slide-over cart drawer) and wishlist operations (display, add, remove, move to cart) with real-time navbar counters and toast notifications.
+- **Checkout & Orders:** Address management, Cash on Delivery (Cash Order), Online Payment checkout session redirection, and order history tracking.
+- **Authentication & Account:** Sign up, sign in, forgot/reset password flow, change password, and protected user workflows.
+
+## Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling & UI:** Tailwind CSS v4, shadcn/ui, Base UI, Lucide React
+- **State & Data Fetching:** TanStack Query (v5), Redux Toolkit, Axios
+- **Forms & Validation:** React Hook Form, Zod
+- **Notifications:** Sonner
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Mohab-Elhashem/route-ecommerce-nextjs.git](https://github.com/Mohab-Elhashem/route-ecommerce-nextjs.git)
+   cd route-ecommerce-nextjs
