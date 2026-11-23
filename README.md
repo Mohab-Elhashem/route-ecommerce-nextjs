@@ -4,7 +4,7 @@ A full-featured e-commerce web application built with **Next.js (App Router)**, 
 
 ## Live Demo & Repository
 
-- **Live Demo:** `https://route-ecommerce-nextjs.vercel.app/`
+- **Live Demo:** [https://route-ecommerce-nextjs.vercel.app/]
 - **GitHub Repository:** `https://github.com/Mohab-Elhashem/route-ecommerce-nextjs`
 
 ## Features
