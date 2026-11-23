@@ -2,6 +2,7 @@
 
 import { useEffect, useSyncExternalStore, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Heart, ShoppingBag, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { api } from "@/lib/api";
@@ -66,8 +67,8 @@ export default function WishlistPage() {
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {commerce.wishlist.map((product) => (
             <Card key={product._id} className="pt-0">
-              <Link href={`/products/${product._id}`} className="aspect-[4/4.2] overflow-hidden rounded-t-xl bg-muted">
-                <img src={product.imageCover} alt={product.title} className="h-full w-full object-contain p-3" />
+              <Link href={`/products/${product._id}`} className="relative aspect-[4/4.2] overflow-hidden rounded-t-xl bg-muted">
+                <Image src={product.imageCover} alt={product.title} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" className="object-contain p-3" />
               </Link>
               <CardContent className="p-4">
                 <Link href={`/products/${product._id}`} className="line-clamp-2 min-h-10 font-bold hover:text-primary">{product.title}</Link>

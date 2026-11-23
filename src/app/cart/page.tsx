@@ -2,6 +2,7 @@
 
 import { useEffect, useSyncExternalStore, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { api } from "@/lib/api";
@@ -81,8 +82,8 @@ export default function CartPage() {
           <div className="space-y-3">
             {cart.products.map((item) => (
               <div key={item._id} className="flex gap-4 rounded-xl border p-4">
-                <Link href={`/products/${item.product._id}`} className="size-28 shrink-0 overflow-hidden rounded-lg bg-muted sm:size-32">
-                  <img src={item.product.imageCover} alt={item.product.title} className="h-full w-full object-contain p-2" />
+                <Link href={`/products/${item.product._id}`} className="relative size-28 shrink-0 overflow-hidden rounded-lg bg-muted sm:size-32">
+                  <Image src={item.product.imageCover} alt={item.product.title} fill sizes="128px" className="object-contain p-2" />
                 </Link>
                 <div className="flex min-w-0 flex-1 flex-col">
                   <Link href={`/products/${item.product._id}`} className="font-bold hover:text-primary">{item.product.title}</Link>

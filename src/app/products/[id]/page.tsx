@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Heart, Minus, Plus, ShoppingBag, Star } from "lucide-react";
 import { toast } from "sonner";
 import Link from "next/link";
+import Image from "next/image";
 import { api } from "@/lib/api";
 import { refreshCart, refreshWishlist } from "@/store/commerceStore";
 import { useAppSelector } from "@/store/hooks";
@@ -122,13 +123,13 @@ export default function ProductDetailsPage() {
       </nav>
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
-          <div className="aspect-square overflow-hidden rounded-2xl border bg-muted">
-            <img src={images[selectedImage] || product.imageCover} alt={product.title} className="h-full w-full object-contain p-4" />
+          <div className="relative aspect-square overflow-hidden rounded-2xl border bg-muted">
+            <Image src={images[selectedImage] || product.imageCover} alt={product.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-4" />
           </div>
           <div className="mt-3 flex gap-3 overflow-x-auto">
             {images.map((image, index) => (
-              <button key={image} type="button" onClick={() => setSelectedImage(index)} className={`size-20 shrink-0 overflow-hidden rounded-lg border-2 bg-muted p-1 ${selectedImage === index ? "border-primary" : "border-transparent"}`}>
-                <img src={image} alt="" className="h-full w-full object-contain" />
+              <button key={image} type="button" onClick={() => setSelectedImage(index)} className={`relative size-20 shrink-0 overflow-hidden rounded-lg border-2 bg-muted p-1 ${selectedImage === index ? "border-primary" : "border-transparent"}`}>
+                <Image src={image} alt="" fill sizes="80px" className="object-contain" />
               </button>
             ))}
           </div>

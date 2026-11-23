@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+import Image from "next/image";
 import { api } from "@/lib/api";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -28,7 +29,7 @@ export default function CategoriesPage() {
           {query.data?.map((category) => (
             <Link key={category._id} href={`/categories/${category._id}`}>
               <Card className="h-full pt-0 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-                <div className="aspect-square overflow-hidden rounded-t-xl bg-muted"><img src={category.image} alt={category.name} className="h-full w-full object-cover transition duration-300 hover:scale-105" /></div>
+                <div className="relative aspect-square overflow-hidden rounded-t-xl bg-muted"><Image src={category.image} alt={category.name} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw" className="object-cover transition duration-300 hover:scale-105" /></div>
                 <CardContent className="p-4 text-center"><h2 className="font-bold">{category.name}</h2></CardContent>
               </Card>
             </Link>

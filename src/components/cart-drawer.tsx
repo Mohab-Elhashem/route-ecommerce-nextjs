@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { api } from "@/lib/api";
@@ -94,7 +95,7 @@ export function CartDrawer({ children }: { children: React.ReactNode }) {
           ) : (
             cart.products.map((item) => (
               <div key={item._id} className="flex gap-3 rounded-xl border p-3">
-                <img src={item.product.imageCover} alt={item.product.title} className="size-20 rounded-lg bg-muted object-contain p-1" />
+                <Image src={item.product.imageCover} alt={item.product.title} width={80} height={80} className="size-20 rounded-lg bg-muted object-contain p-1" />
                 <div className="min-w-0 flex-1">
                   <p className="line-clamp-2 text-sm font-semibold">{item.product.title}</p>
                   <p className="mt-1 text-sm font-bold text-primary">{item.product.priceAfterDiscount || item.product.price} EGP</p>

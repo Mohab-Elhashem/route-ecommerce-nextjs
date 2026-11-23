@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import {
   ArrowLeft,
@@ -132,11 +133,7 @@ export default function Home() {
               {activeHero ? (
                 <>
                   <div className="absolute inset-0">
-                    <img
-                      src={activeHero.imageCover}
-                      alt=""
-                      className="h-full w-full object-cover object-center opacity-30"
-                    />
+                    <Image src={activeHero.imageCover} alt="" fill sizes="100vw" className="object-cover object-center opacity-30" />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/75 to-transparent" />
                   </div>
                   <div className="relative grid h-full min-h-[420px] items-center px-7 py-10 sm:min-h-[470px] sm:px-12 lg:grid-cols-[1fr_42%]">
@@ -158,12 +155,8 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="hidden h-full place-items-center lg:grid">
-                      <div className="aspect-[4/5] w-[70%] rotate-3 rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-2xl backdrop-blur">
-                        <img
-                          src={activeHero.imageCover}
-                          alt={activeHero.title}
-                          className="h-full w-full rounded-[1.5rem] object-contain"
-                        />
+                      <div className="relative aspect-[4/5] w-[70%] rotate-3 rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-2xl backdrop-blur">
+                        <Image src={activeHero.imageCover} alt={activeHero.title} fill sizes="(max-width: 1024px) 0px, 30vw" className="rounded-[1.5rem] object-contain" />
                       </div>
                     </div>
                   </div>
@@ -211,7 +204,7 @@ export default function Home() {
                   href={`/products?category=${category._id}`}
                   className={`group relative min-h-[180px] overflow-hidden rounded-2xl ${index === 0 ? "bg-rose-100" : "bg-sky-100"} lg:min-h-0`}
                 >
-                  <img src={category.image} alt={category.name} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <Image src={category.image} alt={category.name} fill sizes="260px" className="object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-5 text-white">
                     <p className="text-xs font-semibold uppercase tracking-wider text-white/75">Special offer</p>
@@ -246,8 +239,8 @@ export default function Home() {
                   href={`/products?category=${category._id}`}
                   className="group min-w-[128px] rounded-xl border bg-card p-3 text-center transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
                 >
-                  <div className="mx-auto aspect-square w-full max-w-24 overflow-hidden rounded-full bg-muted">
-                    <img src={category.image} alt={category.name} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
+                  <div className="relative mx-auto aspect-square w-full max-w-24 overflow-hidden rounded-full bg-muted">
+                    <Image src={category.image} alt={category.name} fill sizes="96px" className="object-cover transition duration-300 group-hover:scale-105" />
                   </div>
                   <p className="mt-3 truncate text-sm font-semibold">{category.name}</p>
                 </Link>
@@ -284,7 +277,7 @@ export default function Home() {
                 return (
                   <Card key={product._id} className="group pt-0 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <div className="relative aspect-[4/4.2] overflow-hidden rounded-t-xl bg-muted">
-                      <img src={product.imageCover} alt={product.title} className="h-full w-full object-contain p-3 transition duration-500 group-hover:scale-105" />
+                      <Image src={product.imageCover} alt={product.title} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" className="object-contain p-3 transition duration-500 group-hover:scale-105" />
                       {discount > 0 && (
                         <span className="absolute left-3 top-3 rounded-full bg-destructive px-2.5 py-1 text-xs font-bold text-white">-{discount}%</span>
                       )}
@@ -337,7 +330,7 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
               {brands.slice(0, 16).map((brand) => (
                 <Link key={brand._id} href={`/products?brand=${brand._id}`} className="grid aspect-[4/3] place-items-center rounded-xl border bg-background p-3 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
-                  <img src={brand.image} alt={brand.name} className="h-full w-full object-contain" />
+                  <Image src={brand.image} alt={brand.name} width={180} height={135} className="h-full w-full object-contain" />
                 </Link>
               ))}
             </div>

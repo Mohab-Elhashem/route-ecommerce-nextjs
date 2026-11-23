@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+import Image from "next/image";
 import { api } from "@/lib/api";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -22,7 +23,7 @@ export default function BrandsPage() {
           {query.data?.map((brand) => (
             <Link key={brand._id} href={`/brands/${brand._id}`}>
               <Card className="grid aspect-[4/3] place-items-center p-4 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-                <img src={brand.image} alt={brand.name} className="h-full w-full object-contain" />
+                <Image src={brand.image} alt={brand.name} width={220} height={165} className="h-full w-full object-contain" />
               </Card>
             </Link>
           ))}

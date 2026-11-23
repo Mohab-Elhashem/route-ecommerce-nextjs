@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
@@ -26,7 +28,7 @@ export default function BrandDetailsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <div className="grid min-h-64 place-items-center rounded-2xl border bg-gradient-to-br from-muted/30 to-background p-8">
-        <div className="text-center"><img src={brand.image} alt={brand.name} className="mx-auto h-28 max-w-64 object-contain" /><p className="mt-4 text-xs font-bold uppercase tracking-widest text-primary">Brand</p><h1 className="mt-1 text-3xl font-black">{brand.name}</h1></div>
+        <div className="text-center"><Image src={brand.image} alt={brand.name} width={256} height={112} className="mx-auto h-28 max-w-64 object-contain" /><p className="mt-4 text-xs font-bold uppercase tracking-widest text-primary">Brand</p><h1 className="mt-1 text-3xl font-black">{brand.name}</h1></div>
       </div>
       <section className="mt-10">
         <h2 className="mb-5 text-2xl font-bold">Products</h2>

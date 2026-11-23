@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { PackageCheck, Truck, CreditCard } from "lucide-react";
 import { api } from "@/lib/api";
 import { useAppSelector } from "@/store/hooks";
@@ -72,7 +73,7 @@ export default function AllOrdersPage() {
                   <div className="space-y-3">
                     {order.cartItems.map((item) => (
                       <Link key={item._id} href={`/products/${item.product._id}`} className="flex items-center gap-3 rounded-lg border p-3">
-                        <img src={item.product.imageCover} alt={item.product.title} className="size-16 rounded-lg bg-muted object-contain p-1" />
+                        <Image src={item.product.imageCover} alt={item.product.title} width={64} height={64} className="size-16 rounded-lg bg-muted object-contain p-1" />
                         <div className="min-w-0 flex-1"><p className="truncate font-semibold">{item.product.title}</p><p className="mt-1 text-xs text-muted-foreground">Qty: {item.count}</p></div>
                         <p className="font-bold text-primary">{item.price} EGP</p>
                       </Link>

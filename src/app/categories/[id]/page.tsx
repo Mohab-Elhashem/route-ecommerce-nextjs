@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -32,7 +33,7 @@ export default function CategoryDetailsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <div className="relative min-h-72 overflow-hidden rounded-2xl bg-slate-950 text-white">
-        <img src={category.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-35" />
+        <Image src={category.image} alt="" fill sizes="100vw" className="object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 to-transparent" />
         <div className="relative flex min-h-72 items-center p-8"><div><p className="text-sm font-bold uppercase tracking-widest text-amber-300">Category</p><h1 className="mt-2 text-4xl font-black">{category.name}</h1></div></div>
       </div>

@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: false,
   reactCompiler: true,
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "ecommerce.routemisr.com" }],
+  },
   turbopack: {
     rules: {
       "*.css": {
